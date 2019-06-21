@@ -21,11 +21,17 @@ class Carousel {
 
     moveRight() {
      //if button is right add index 
-
+        this.index += 1;
+        this.imgs[this.index].style.display = 'flex'; 
+        console.log(this.index);
+        console.log("right click");
     }
 
     moveLeft() {
         //if button is left subtract index
+        this.index -= 1;
+        this.imgs[this.index].style.display = 'flex'; 
+        console.log("left click");
        }
 }
 
