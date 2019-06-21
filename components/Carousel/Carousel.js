@@ -31,8 +31,9 @@ class Carousel {
       case false:
         break;
     }
-    console.log("right click");
-    console.log(this.index);
+    //Tests to ensure index and click work properly
+    // console.log("right click");
+    // console.log(this.index);
   }
 
   moveLeft() {
@@ -46,8 +47,9 @@ class Carousel {
       case false:
         break;
     }
-    console.log("left click");
-    console.log(this.index);
+    //Tests to ensure index and click work properly
+    // console.log("left click");
+    // console.log(this.index);
   }
 }
 
