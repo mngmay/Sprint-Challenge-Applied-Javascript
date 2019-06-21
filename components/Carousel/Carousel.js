@@ -11,7 +11,7 @@ class Carousel {
     // console.log(this.leftBtn);
 
     this.index = 0;
-    this.imgs[this.index].style.display = "flex"; //reveals image based on index
+    this.imgs[this.index].style.display = "flex"; //reveals image based on index - sets the default to index 0
     // console.log(this.imgs[this.index]);
 
     this.rightBtn.addEventListener("click", () => this.moveRight());
@@ -25,12 +25,12 @@ class Carousel {
     switch (this.index < Array.from(this.imgs).length - 1) {
       case true:
         this.index += 1;
-        this.imgs.forEach(img => img.style.display = "none");  //remove all other imgs
-        this.imgs[this.index].style.display = "flex"; //just show selected img
         break;
       case false:
         break;
     }
+    this.imgs.forEach(img => img.style.display = "none");  //remove all other imgs
+    this.imgs[this.index].style.display = "flex"; //just show selected img
     //Tests to ensure index and click work properly
     // console.log("right click");
     // console.log(this.index);
@@ -41,12 +41,12 @@ class Carousel {
     switch (this.index > 0) {
       case true:
         this.index -= 1;
-        this.imgs.forEach(img => img.style.display = "none");  //remove all other imgs
-        this.imgs[this.index].style.display = "flex"; //just show selected img
         break;
       case false:
         break;
     }
+    this.imgs.forEach(img => img.style.display = "none");  //remove all other imgs
+    this.imgs[this.index].style.display = "flex"; //just show selected img
     //Tests to ensure index and click work properly
     // console.log("left click");
     // console.log(this.index);
