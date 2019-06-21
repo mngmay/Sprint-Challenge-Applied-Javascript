@@ -11,8 +11,22 @@ class Carousel {
         // console.log(this.leftBtn);
 
         this.index = 0;
+        this.imgs[this.index].style.display = 'flex'; //reveals image based on index
+
+        this.rightBtn.addEventListener('click', () => this.moveRight());
+        this.leftBtn.addEventListener('click', () => this.moveLeft());
+    }
+
+    //methods
+
+    moveRight() {
+     //if button is right add index 
 
     }
+
+    moveLeft() {
+        //if button is left subtract index
+       }
 }
 
 let carousel = document.querySelector(".carousel");
