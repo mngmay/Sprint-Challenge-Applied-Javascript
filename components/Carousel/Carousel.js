@@ -1,8 +1,62 @@
 class Carousel {
+  constructor(element) {
+    this.element = element;
+    this.imgs = this.element.querySelectorAll("img");
+    // console.log(this.imgs);
 
+    this.rightBtn = this.element.querySelector(".right-button");
+    // console.log(this.rightBtn);
+
+    this.leftBtn = this.element.querySelector(".left-button");
+    // console.log(this.leftBtn);
+
+    this.index = 0;
+    this.imgs[this.index].style.display = "flex"; //reveals image based on index - sets the default to index 0
+    // console.log(this.imgs[this.index]);
+
+    this.rightBtn.addEventListener("click", () => this.moveRight());
+    this.leftBtn.addEventListener("click", () => this.moveLeft());
+  }
+
+  //methods
+
+  moveRight() {
+    //Move one index up for each click, up to the length of the nodelist
+    switch (this.index < Array.from(this.imgs).length - 1) {
+      case true:
+        this.index += 1;
+        break;
+      case false:
+        break;
+    }
+    this.imgs.forEach(img => img.style.display = "none");  //remove all other imgs
+    this.imgs[this.index].style.display = "flex"; //just show selected img
+    //Tests to ensure index and click work properly
+    // console.log("right click");
+    // console.log(this.index);
+  }
+
+  moveLeft() {
+    //if button is left subtract index until 0
+    switch (this.index > 0) {
+      case true:
+        this.index -= 1;
+        break;
+      case false:
+        break;
+    }
+    this.imgs.forEach(img => img.style.display = "none");  //remove all other imgs
+    this.imgs[this.index].style.display = "flex"; //just show selected img
+    //Tests to ensure index and click work properly
+    // console.log("left click");
+    // console.log(this.index);
+  }
 }
 
-let carousel = document.querySelector();
+let carousel = document.querySelector(".carousel");
+// console.log(carousel);
+
+carousel = new Carousel(carousel);
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
     1. You will need to grab a reference to the carousel, and in it grab the left and right buttons
